@@ -1,10 +1,19 @@
-const Buttons = ({ filterByType, setSat, displaySats }) => {
-  return (
-    <div>
-      <button>Placeholder Button</button>
-      <button>All Orbits</button>
-    </div>
-  );
-};
+import React from 'react';
+import './styling.css';
+
+function Buttons({ filterByType, displaySats }) {
+   return (
+      <div className="flex-container">
+         {displaySats.map((orbitType, index) => (
+            <button key={index} onClick={() => filterByType(orbitType)}>
+               {orbitType} Orbit
+            </button>
+         ))}
+         <button onClick={() => setData(displaySats)}>
+            All Orbits
+         </button>
+      </div>
+   );
+}
 
 export default Buttons;
